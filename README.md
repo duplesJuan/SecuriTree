@@ -5,7 +5,7 @@ This application handles all of the backend set up on its own.
 Please note that a MYSQL server instance should be installed and running on the user PC. 
 The credentials for the DB should be set up by the user in the config.ini file.
 
-The business logic is mostly based in Python.
+The business logic is mostly based in Python 3.6.
 
 Python Requirements are (however most are part of the Python Standard library) -
 * getpass
@@ -32,6 +32,4 @@ Python Requirements are (however most are part of the Python Standard library) -
     * View the access hierarchy or
     * Manage the doors
     
-    ![main menu](Images\main_menu.jpg?raw=true)
-    
-
+    ![main menu](https://github.com/duplesJuan/SecuriTree/tree/master/Images/main_menu.jpg?raw=true)
