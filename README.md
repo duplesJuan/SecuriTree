@@ -31,6 +31,6 @@ Python Requirements are (however most are part of the Python Standard library) -
 2. Select to either - 
     * View the access hierarchy or
     * Manage the doors
-    * [main menu](Images\main_menu.jpg)
+    * [main menu](Images\main_menu.jpg?raw=true)
     
 
