@@ -17,7 +17,7 @@ Python Requirements are (however most are part of the Python Standard library) -
 * configparser
 * json
 
-###Steps To Set Up Application
+### Steps To Set Up Application
 1. Ensure that you have MYSQL Server installed (can be downloaded from [here](https://dev.mysql.com/downloads/))
 2. Open the config.ini file and fill in the database credentials. 
     * host - if MYSQL is installed on your local pc, host will likely be set to 'localhost' unless set up otherwise.
@@ -26,11 +26,12 @@ Python Requirements are (however most are part of the Python Standard library) -
 3. Run the Initiate_DB.py file to create and populate the database with the data needed for the Access Management Application. **Note** -  the user passwords are hashed for secure storing in a database
 4. You can now run the Access Management Application
 
-###Application Workflow
+### Application Workflow
 1. Login using the authorised username and password to access the Access Management System
 2. Select to either - 
     * View the access hierarchy or
     * Manage the doors
-    * [main menu](Images\main_menu.jpg?raw=true)
+    
+    ![main menu](Images\main_menu.jpg?raw=true)
     
 
