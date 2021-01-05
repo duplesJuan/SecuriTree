@@ -2,8 +2,8 @@ import pymysql
 import hashlib
 import os
 import binascii
-import Data_Management.Parse_JSON as Parse_JSON
-import Data_Management.Config_Parser as cfg
+import Parse_JSON
+import Config_Parser as cfg
 
 
 def hash_password(password):
