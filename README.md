@@ -33,3 +33,6 @@ Python Requirements are (however most are part of the Python Standard library) -
     * Manage the doors
     
     ![main menu](https://github.com/duplesJuan/SecuriTree/blob/master/Images/main_menu.jpg?raw=true)
+3. The view access hierarchy option allows the user to see the status of all the doors in the building as well as the access rules for the areas in a hierarchical structure.
+
+    ![hierarchy](https://github.com/duplesJuan/SecuriTree/blob/master/Images/hierarchy.jpg?raw=true)
