@@ -37,10 +37,10 @@ if __name__ == '__main__':
     cursor.execute("CREATE TABLE IF NOT EXISTS {}.ACCESS_RULES (id VARCHAR(100), name VARCHAR(100), doors VARCHAR(5000));".format(conf_vars["db_schema"]))
 
     # This prepares the data in dictionaries
-    user_entries = Parse_JSON.get_Json(r"../Import_data/registered_users.json")["registered_users"]
-    sys_data_areas_entries = Parse_JSON.get_Json(r"../Import_data/system_data.json")["system_data"]["areas"]
-    sys_data_doors_entries = Parse_JSON.get_Json(r"../Import_data/system_data.json")["system_data"]["doors"]
-    sys_data_acc_rules_entries = Parse_JSON.get_Json(r"../Import_data/system_data.json")["system_data"]["access_rules"]
+    user_entries = Parse_JSON.get_Json(r"Import_data/registered_users.json")["registered_users"]
+    sys_data_areas_entries = Parse_JSON.get_Json(r"Import_data/system_data.json")["system_data"]["areas"]
+    sys_data_doors_entries = Parse_JSON.get_Json(r"Import_data/system_data.json")["system_data"]["doors"]
+    sys_data_acc_rules_entries = Parse_JSON.get_Json(r"Import_data/system_data.json")["system_data"]["access_rules"]
 
     # This loads the userdata into the correct table
     count = 1
