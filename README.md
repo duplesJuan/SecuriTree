@@ -23,7 +23,7 @@ Python Requirements are (however most are part of the Python Standard library) -
     * host - if MYSQL is installed on your local pc, host will likely be set to 'localhost' unless set up otherwise.
     * username and password - will be the same as credentials for your MYSQL Server.
     * schema - will be the database name for your security system (if it does not exist, it will be created automatically with the database initialisation step).
-3. Run the Initiate_DB.py file to create and populate the database with the data needed for the Access Management Application. **Note** -  the user passwords are hashed for secure storing in a database.
+3. Run the initiate_db.bat file to create and populate the database with the data needed for the Access Management Application. **Note** -  the user passwords are hashed for secure storing in a database.
 4. You can now run the Access Management Application by executing the run_access_management.bat file.
 
 ### Application Workflow
