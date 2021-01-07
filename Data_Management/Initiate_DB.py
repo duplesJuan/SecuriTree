@@ -19,7 +19,7 @@ def hash_password(password):
 
 
 if __name__ == '__main__':
-    conf_vars = cfg.return_config_as_dict(r"..\config.ini")
+    conf_vars = cfg.return_config_as_dict(r"config.ini")
     db = pymysql.connect(conf_vars["db_host"],
                          conf_vars["db_username"],
                          conf_vars["db_password"])
