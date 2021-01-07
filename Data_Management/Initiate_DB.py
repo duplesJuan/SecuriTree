@@ -49,11 +49,12 @@ if __name__ == '__main__':
                                                len(user_entries)))
         cursor.execute("""INSERT INTO {}.auth_users (username,first_name,surname,password)
                           select '{}','{}','{}','{}' from dual
-                          where not exists (select * from securitree.auth_users where username = '{}' LIMIT 1);""".format(conf_vars["db_schema"],
+                          where not exists (select * from {}.auth_users where username = '{}' LIMIT 1);""".format(conf_vars["db_schema"],
                                                                                                                           entry["username"],
                                                                                                                           entry["first_name"],
                                                                                                                           entry["surname"],
                                                                                                                           hash_password(entry["password"]),
+                                                                                                                          conf_vars["db_schema"],
                                                                                                                           entry["username"]))
         count += 1
     db.commit()
@@ -65,12 +66,13 @@ if __name__ == '__main__':
                                                len(sys_data_areas_entries)))
         cursor.execute("""INSERT INTO {}.areas (id,name,parent_area_id,child_area_ids)
                           select '{}','{}','{}','{}' from dual
-                          where not exists (select * from securitree.areas where id = '{}' LIMIT 1);""".format(conf_vars["db_schema"],
-                                                                                                               entry["id"],
-                                                                                                               entry["name"],
-                                                                                                               entry["parent_area"],
-                                                                                                               ";".join(entry["child_area_ids"]),
-                                                                                                               entry["id"]))
+                          where not exists (select * from {}.areas where id = '{}' LIMIT 1);""".format(conf_vars["db_schema"],
+                                                                                                       entry["id"],
+                                                                                                       entry["name"],
+                                                                                                       entry["parent_area"],
+                                                                                                       ";".join(entry["child_area_ids"]),
+                                                                                                       conf_vars["db_schema"],
+                                                                                                       entry["id"]))
         count += 1
     db.commit()
 
@@ -81,12 +83,13 @@ if __name__ == '__main__':
                                                len(sys_data_doors_entries)))
         cursor.execute("""INSERT INTO {}.doors (id,name,parent_area,status)
                           select '{}','{}','{}','{}' from dual
-                          where not exists (select * from securitree.areas where id = '{}' LIMIT 1);""".format(conf_vars["db_schema"],
-                                                                                                               entry["id"],
-                                                                                                               entry["name"],
-                                                                                                               entry["parent_area"],
-                                                                                                               entry["status"],
-                                                                                                               entry["id"]))
+                          where not exists (select * from {}.areas where id = '{}' LIMIT 1);""".format(conf_vars["db_schema"],
+                                                                                                       entry["id"],
+                                                                                                       entry["name"],
+                                                                                                       entry["parent_area"],
+                                                                                                       entry["status"],
+                                                                                                       conf_vars["db_schema"],
+                                                                                                       entry["id"]))
         count += 1
     db.commit()
 
@@ -97,11 +100,12 @@ if __name__ == '__main__':
                                                       len(sys_data_acc_rules_entries)))
         cursor.execute("""INSERT INTO {}.access_rules (id,name,doors)
                           select '{}','{}','{}' from dual
-                          where not exists (select * from securitree.areas where id = '{}' LIMIT 1);""".format(conf_vars["db_schema"],
-                                                                                                               entry["id"],
-                                                                                                               entry["name"],
-                                                                                                               ';'.join(entry["doors"]),
-                                                                                                               entry["id"]))
+                          where not exists (select * from {}.areas where id = '{}' LIMIT 1);""".format(conf_vars["db_schema"],
+                                                                                                       entry["id"],
+                                                                                                       entry["name"],
+                                                                                                       ';'.join(entry["doors"]),
+                                                                                                       conf_vars["db_schema"],
+                                                                                                       entry["id"]))
         count += 1
     db.commit()
 
