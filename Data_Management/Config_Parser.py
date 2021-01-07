@@ -2,6 +2,10 @@ import configparser
 
 
 def return_config_as_dict(config_file):
+    """
+    This function reads in the config variables and returns them as a dictionary
+    """
+
     config = configparser.ConfigParser()
     config.read(config_file)
 
@@ -11,4 +15,3 @@ def return_config_as_dict(config_file):
                  'db_schema': config['db_credentials']['schema']}
 
     return conf_vars
-

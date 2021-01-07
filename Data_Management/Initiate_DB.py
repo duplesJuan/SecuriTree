@@ -7,7 +7,10 @@ import Config_Parser as cfg
 
 
 def hash_password(password):
-    """Hash a password for storing."""
+    """
+    This function hashes a password for storing
+    """
+
     salt = hashlib.sha256(os.urandom(60)).hexdigest().encode('ascii')
     pwdhash = hashlib.pbkdf2_hmac('sha512', password.encode('utf-8'),
                                   salt, 100000)

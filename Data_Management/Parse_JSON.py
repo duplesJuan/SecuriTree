@@ -1,6 +1,4 @@
 import json
-import sys
-import os
 
 
 def get_Json(input_file):
@@ -15,8 +13,3 @@ def get_Json(input_file):
     finally:
         file.close()
         return new_dict
-
-
-if __name__ == '__main__':
-    print(get_Json(r"../Import_data/registered_users.json"))
-

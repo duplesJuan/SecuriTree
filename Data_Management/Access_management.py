@@ -11,7 +11,9 @@ tab = 0
 
 
 def print_application_name():
-    """This function prints the application name wherever necessary in the menus"""
+    """
+    This function prints the application name wherever necessary in the menus
+    """
 
     print("*************************************************\n"
           "*        SECURITREE - Security Dashboard        *\n"
@@ -19,8 +21,10 @@ def print_application_name():
 
 
 def login_dialogue():
-    """This function displays the landing menu where the
-    user is initially asked to log in"""
+    """
+    This function displays the landing menu where the
+    user is initially asked to log in
+    """
 
     print_application_name()
     print("Welcome to Securitree! \n"
@@ -34,8 +38,10 @@ def login_dialogue():
 
 
 def try_again_dialogue():
-    """This function displays the screen when the log in
-    attempt was unsuccessful and prompts the user to try again"""
+    """
+    This function displays the screen when the log in
+    attempt was unsuccessful and prompts the user to try again
+    """
 
     print_application_name()
     print("Login failed. \n"
@@ -49,7 +55,9 @@ def try_again_dialogue():
 
 
 def check_auth_login(user, passwd):
-    """This function checks to see if the user trying to log in is authorised to do so"""
+    """
+    This function checks to see if the user trying to log in is authorised to do so
+    """
 
     db = pymysql.connect(conf_vars["db_host"],
                          conf_vars["db_username"],
@@ -69,7 +77,9 @@ def check_auth_login(user, passwd):
 
 
 def show_main_menu_dialogue():
-    """This function prints the main menu dialogue to the user"""
+    """
+    This function prints the main menu dialogue to the user
+    """
 
     print_application_name()
     print("Main Menu Options:\n"
@@ -92,14 +102,18 @@ def show_main_menu_dialogue():
 
 
 def show_logged_out_screen():
-    """This function displays the logged out screen when the user opts to log out"""
+    """
+    This function displays the logged out screen when the user opts to log out
+    """
 
     print_application_name()
     input("You have logged out! Press ENTER to login.\n")
 
 
 def show_security_hierarchy():
-    """This function displays the screen that shows the security hierarchy"""
+    """
+    This function displays the screen that shows the security hierarchy
+    """
 
     print_application_name()
     print("Entity Hierarchy:\n\n")
@@ -121,8 +135,10 @@ def show_security_hierarchy():
 
 
 def read_recursive_area_hierarchy(id, tab=''):
-    """This function reads recursively into the area hierarchy and
-    subsequently displays all the relevant info such as the doors and the access rules"""
+    """
+    This function reads recursively into the area hierarchy and
+    subsequently displays all the relevant info such as the doors and the access rules
+    """
 
     db = pymysql.connect(conf_vars["db_host"],
                          conf_vars["db_username"],
@@ -141,8 +157,10 @@ def read_recursive_area_hierarchy(id, tab=''):
 
 
 def display_access_rules(parent_area_id):
-    """This function formats the access rules information into one string
-    for a specific area"""
+    """
+    This function formats the access rules information into one string
+    for a specific area
+    """
 
     db = pymysql.connect(conf_vars["db_host"],
                          conf_vars["db_username"],
@@ -175,7 +193,9 @@ def display_access_rules(parent_area_id):
 
 
 def display_door_information(id):
-    """This function formats the door information into one string for a specific area"""
+    """
+    This function formats the door information into one string for a specific area
+    """
 
     db = pymysql.connect(conf_vars["db_host"],
                          conf_vars["db_username"],
@@ -203,7 +223,9 @@ def display_door_information(id):
 
 
 def show_manage_doors_screen():
-    """This function prints the manage doors dialogue to the user"""
+    """
+    This function prints the manage doors dialogue to the user
+    """
 
     print_application_name()
     print("Manage Doors Menu Options:\n"
@@ -228,8 +250,10 @@ def show_manage_doors_screen():
 
 
 def list_door_ids():
-    """This function prints the screen showing the
-    doornames and ids for use in the lock and unlock system"""
+    """
+    This function prints the screen showing the
+    doornames and ids for use in the lock and unlock system
+    """
 
     print_application_name()
 
@@ -260,7 +284,9 @@ def list_door_ids():
 
 
 def show_lock_unlock_screen(action):
-    """This function prints the manage doors dialogue to the user"""
+    """
+    This function prints the manage doors dialogue to the user
+    """
 
     print_application_name()
     if action == 'l':
@@ -303,13 +329,19 @@ def show_lock_unlock_screen(action):
 
 
 def clear_screen():
-    """This function clears the screen to facilitate menu movement"""
+    """
+    This function clears the screen to facilitate menu movement
+    """
 
     clear = lambda: os.system('cls')
     clear()
 
 
 def handle_login():
+    """
+    This function handles the calls that need to happen for a login attempt
+    """
+
     clear_screen()
     user, password = login_dialogue()
     logged_in = check_auth_login(user, password)
@@ -325,7 +357,10 @@ def handle_login():
 
 
 def verify_password(stored_password, provided_password):
-    """Verify a stored password against one provided by user"""
+    """
+    This function verifies a stored password against one provided by user
+    """
+
     salt = stored_password[:64]
     stored_password = stored_password[64:]
     pwdhash = hashlib.pbkdf2_hmac('sha512',
