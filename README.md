@@ -5,7 +5,7 @@ This application handles all of the backend set up on its own.
 Please note that a MYSQL server instance should be installed and running on the user PC. 
 The credentials for the DB should be set up by the user in the config.ini file.
 
-The business logic is mostly based in Python 3.6.
+The business logic is mostly based in Python 3.6 (can be downloaded from [here](https://www.python.org/downloads/)).
 
 Python Requirements are (however most are part of the Python Standard library) -
 * getpass
@@ -39,3 +39,7 @@ Python Requirements are (however most are part of the Python Standard library) -
 4. The manage doors option redirects the user to a page where they can select to view the ids of the doors and either lock or unlock the doors using the ids.
     
     ![manage_doors](https://github.com/duplesJuan/SecuriTree/blob/master/Images/manage_doors.jpg?raw=true)
+
+### Application Architecture Diagram
+
+![architecture diagram](https://github.com/duplesJuan/SecuriTree/blob/master/Images/Access_Management.png?raw=true)
